@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.UI;
 
 using Core.Interactables;
 

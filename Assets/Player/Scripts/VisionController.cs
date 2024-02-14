@@ -17,7 +17,6 @@ namespace Core.Player
         public float vSensitivity = 2.5f;
 
         private float xRot = 0f;
-        private Vector3 screenCenter = Vector3.one * .5f;
         
         private Vector3 mousePos => Mouse.current.delta.value;
         
