@@ -208,8 +208,8 @@ MonoBehaviour:
   characterController: {fileID: 7824096212038940359}
   verticalLookLimitAngle: 90
   camMovementThreshold: 0.01
-  hSensitivity: 5
-  vSensitivity: 2.5
+  hSensitivity: 8
+  vSensitivity: 4
 --- !u!114 &7434405860041931729
 MonoBehaviour:
   m_ObjectHideFlags: 0
