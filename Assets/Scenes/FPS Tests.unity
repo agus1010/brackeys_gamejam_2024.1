@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 91780}
   - component: {fileID: 91779}
   - component: {fileID: 91781}
+  - component: {fileID: 91782}
+  - component: {fileID: 91783}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -200,7 +202,69 @@ MonoBehaviour:
   characterController: {fileID: 91779}
   verticalLookLimitAngle: 90
   camMovementThreshold: 0.01
-  sensitivity: 2.5
+  hSensitivity: 5
+  vSensitivity: 2.5
+--- !u!114 &91782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61f9a58a10e814498545f2453cd02ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 91779}
+  maxSpeed: 0.5
+  maxSpeedAccelerationInSeconds: 1
+--- !u!114 &91783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d085385ee07da864185a7318fda8ff5d, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 91782}
+        m_TargetAssemblyTypeName: Core.Player.MovementController, Assembly-CSharp
+        m_MethodName: MoveInDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 58923989-95d8-471f-b477-ab73702104ff
+    m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Movement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &89828942
 GameObject:
   m_ObjectHideFlags: 0
