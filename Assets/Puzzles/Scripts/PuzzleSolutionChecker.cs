@@ -2,11 +2,8 @@
 
 namespace Core.Puzzles
 {
-	public class PuzzleSolutionChecker : MonoBehaviour, IPuzzleSolution
+	public abstract class PuzzleSolutionChecker : MonoBehaviour, IPuzzleSolution
 	{
-		public virtual bool Check()
-		{
-			return true;
-		}
+		public abstract bool Check();
 	}
 }

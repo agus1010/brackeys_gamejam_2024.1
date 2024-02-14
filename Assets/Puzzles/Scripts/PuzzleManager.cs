@@ -3,12 +3,12 @@
 
 namespace Core.Puzzles
 {
-	[RequireComponent(typeof(PuzzleSolutionChecker))]
 	public class PuzzleManager : MonoBehaviour
 	{
 		[Header("References:")]
 		[SerializeField] private PuzzleSolutionChecker solutionChecker;
 		[SerializeField] private AudioSource audioSource;
+		[SerializeField] private Animator animator;
 
 		[Header("Config:")]
 		public AudioClip correctSolutionClip;
@@ -18,11 +18,15 @@ namespace Core.Puzzles
 		public void TestSolution()
 		{
 			bool puzzleSolved = solutionChecker.Check();
-			print(puzzleSolved);
 			handleSolutionProvided
 				(
 					audioClip: puzzleSolved ? correctSolutionClip : incorrectSolutionClip
 				);
+			if (puzzleSolved)
+			{
+				animator.SetTrigger("Open");
+				animator.GetComponent<Collider>().isTrigger = true;
+			}
 		}
 
 
@@ -30,6 +34,7 @@ namespace Core.Puzzles
 		{
 			audioSource.clip = audioClip;
 			audioSource.Play();
+
 		}
 	}
 }

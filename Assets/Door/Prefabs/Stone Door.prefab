@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2935881809220610801}
   - component: {fileID: 2725001519157748163}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Stone Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
