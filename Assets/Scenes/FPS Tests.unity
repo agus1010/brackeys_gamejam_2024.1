@@ -992,6 +992,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1510525628}
     - target: {fileID: 4315214854137793988, guid: b185a19a8eb07e44fba545b251c18671, type: 3}
+      propertyPath: uiInputModule
+      value: 
+      objectReference: {fileID: 1510525630}
+    - target: {fileID: 4315214854137793988, guid: b185a19a8eb07e44fba545b251c18671, type: 3}
       propertyPath: physicsRaycaster
       value: 
       objectReference: {fileID: 278252006}
