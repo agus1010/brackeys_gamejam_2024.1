@@ -93,9 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4180318093471144742}
   - component: {fileID: 7824096212038940359}
+  - component: {fileID: 1814476374412264282}
   - component: {fileID: 3378970995107975078}
   - component: {fileID: 7434405860041931729}
-  - component: {fileID: 1814476374412264282}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -146,39 +146,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3378970995107975078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2216462541944831373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07546ac28f9eca34793b6c2508e9c3e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 7417765680109421170}
-  characterController: {fileID: 7824096212038940359}
-  verticalLookLimitAngle: 90
-  camMovementThreshold: 0.01
-  hSensitivity: 5
-  vSensitivity: 2.5
---- !u!114 &7434405860041931729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2216462541944831373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b61f9a58a10e814498545f2453cd02ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 7824096212038940359}
-  maxSpeed: 10
-  maxSpeedAccelerationInSeconds: 2
 --- !u!114 &1814476374412264282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +192,39 @@ MonoBehaviour:
   m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3378970995107975078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216462541944831373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07546ac28f9eca34793b6c2508e9c3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 7417765680109421170}
+  characterController: {fileID: 7824096212038940359}
+  verticalLookLimitAngle: 90
+  camMovementThreshold: 0.01
+  hSensitivity: 5
+  vSensitivity: 2.5
+--- !u!114 &7434405860041931729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216462541944831373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61f9a58a10e814498545f2453cd02ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 7824096212038940359}
+  maxSpeed: 10
+  maxSpeedAccelerationInSeconds: 2
 --- !u!1 &2522744330484157976
 GameObject:
   m_ObjectHideFlags: 0

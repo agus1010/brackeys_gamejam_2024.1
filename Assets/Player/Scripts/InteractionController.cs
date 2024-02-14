@@ -1,22 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 
 namespace Core.Player
 {
     public class InteractionController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField] private PhysicsRaycaster physicsRaycaster;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-    }
+		public void TryInteracting(InputAction.CallbackContext callbackContext)
+		{
+		}
+	}
 }
