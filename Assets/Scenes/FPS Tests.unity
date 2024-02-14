@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 91779}
-  maxSpeed: 0.5
-  maxSpeedAccelerationInSeconds: 1
+  maxSpeed: 10
+  maxSpeedAccelerationInSeconds: 2
 --- !u!114 &91783
 MonoBehaviour:
   m_ObjectHideFlags: 0
