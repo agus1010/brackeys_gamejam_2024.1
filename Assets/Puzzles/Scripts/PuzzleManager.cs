@@ -10,21 +10,20 @@ namespace Core.Puzzles
 		[Header("References:")]
 		[SerializeField] private Transform puzzlesParent;
 
+		private Stack<Puzzle> puzzles;
 
-		private List<Puzzle> puzzles;
 
 		private void Start()
 		{
-			puzzles = puzzlesParent.GetComponentsInChildren<Puzzle>().ToList();
+			puzzles = new Stack<Puzzle>(puzzlesParent.GetComponentsInChildren<Puzzle>().Reverse());
 		}
 
 
 		public void TestSolution()
 		{
-			if (puzzles.Count == 0 || !puzzles[0].Check())
+			if (!puzzles.TryPeek(out Puzzle current) || !current.Check())
 				return;
-
-			puzzles.RemoveAt(0);
+			puzzles.Pop();
 		}
 	}
 }
