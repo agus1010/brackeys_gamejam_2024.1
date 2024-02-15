@@ -23,8 +23,8 @@ namespace Core.Player
 
         private void Start ()
         {
-            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
 		private void Update()
