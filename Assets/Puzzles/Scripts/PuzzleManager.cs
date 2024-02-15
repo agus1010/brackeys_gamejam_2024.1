@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
@@ -10,12 +9,12 @@ namespace Core.Puzzles
 		[Header("References:")]
 		[SerializeField] private Transform puzzlesParent;
 
-		private Stack<Puzzle> puzzles;
+		private Queue<Puzzle> puzzles;
 
 
 		private void Start()
 		{
-			puzzles = new Stack<Puzzle>(puzzlesParent.GetComponentsInChildren<Puzzle>().Reverse());
+			puzzles = new Queue<Puzzle>(puzzlesParent.GetComponentsInChildren<Puzzle>());
 		}
 
 
@@ -23,7 +22,7 @@ namespace Core.Puzzles
 		{
 			if (!puzzles.TryPeek(out Puzzle current) || !current.Check())
 				return;
-			puzzles.Pop();
+			puzzles.Dequeue();
 		}
 	}
 }
