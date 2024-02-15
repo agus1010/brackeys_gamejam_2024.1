@@ -533,6 +533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Puzzle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8180863020581560271, guid: 80f3a4b5b45febc479590af705e032e0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

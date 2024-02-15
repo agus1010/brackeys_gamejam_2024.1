@@ -16,6 +16,7 @@ namespace Core.Puzzles
 		private void Start()
 		{
 			puzzles = new Queue<Puzzle>(puzzlesParent.GetComponentsInChildren<Puzzle>().Where(p => p.gameObject.activeSelf));
+			puzzles.Peek()?.Activate();
 		}
 
 
@@ -23,7 +24,12 @@ namespace Core.Puzzles
 		{
 			if (!(puzzles.TryPeek(out Puzzle current) && current.Check()))
 				return;
+			
+			puzzles.Peek().Deactivate();
 			puzzles.Dequeue();
+
+			if (puzzles.TryPeek(out Puzzle newCurrent))
+				newCurrent.Activate();
 		}
 	}
 }
