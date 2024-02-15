@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1476230303092916890}
+  - component: {fileID: 6318254373399994390}
   - component: {fileID: 2935881809220610801}
   m_Layer: 0
   m_Name: Stone Door
@@ -33,6 +34,20 @@ Transform:
   - {fileID: 793230299772810331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6318254373399994390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200599405404593281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ae84543ed947c4cac4b6e0c8fceffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2935881809220610801}
+  audioSource: {fileID: 2322013017944949193}
 --- !u!95 &2935881809220610801
 Animator:
   serializedVersion: 5
@@ -147,12 +162,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318022931863852791}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7384eff082a1a9b469bfd39ce639bddf, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.507
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

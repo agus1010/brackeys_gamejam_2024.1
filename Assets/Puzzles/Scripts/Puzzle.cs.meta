@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fdd5d3748d6df6447b3903f5349475d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - solution: {instanceID: 0}
+  - associatedDoor: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - success: {fileID: 8300000, guid: 68cb6a8897888a344a6635b16e03d4b4, type: 3}
+  - failure: {fileID: 8300000, guid: bd31a92f7437bec41afc93428dd59e1b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
