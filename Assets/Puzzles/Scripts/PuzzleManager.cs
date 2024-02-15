@@ -18,11 +18,11 @@ namespace Core.Puzzles
 
 		public void TestSolution()
 		{
+			if (puzzlesProvider.puzzlesLeft == 0)
+				return;
+
 			bool puzzleSolved = puzzlesProvider.currentPuzzle.Check();
-			handleSolutionProvided
-				(
-					audioClip: puzzleSolved ? correctSolutionClip : incorrectSolutionClip
-				);
+			AudioClip clip;
 			if (puzzleSolved)
 			{
 				if (stoneDoorPrefabs.Count > 0)
@@ -30,14 +30,14 @@ namespace Core.Puzzles
 					stoneDoorPrefabs[0].GetComponent<Animator>().SetTrigger("Open");
 					stoneDoorPrefabs.RemoveAt(0);
 				}
+				clip = correctSolutionClip;
 				puzzlesProvider.MoveToNext();
 			}
-		}
-
-
-		private void handleSolutionProvided(AudioClip audioClip)
-		{
-			audioSource.clip = audioClip;
+			else
+			{
+				clip = incorrectSolutionClip;
+			}
+			audioSource.clip = clip;
 			audioSource.Play();
 		}
 	}
