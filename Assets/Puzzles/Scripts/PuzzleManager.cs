@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -14,13 +15,13 @@ namespace Core.Puzzles
 
 		private void Start()
 		{
-			puzzles = new Queue<Puzzle>(puzzlesParent.GetComponentsInChildren<Puzzle>());
+			puzzles = new Queue<Puzzle>(puzzlesParent.GetComponentsInChildren<Puzzle>().Where(p => p.gameObject.activeSelf));
 		}
 
 
 		public void TestSolution()
 		{
-			if (!puzzles.TryPeek(out Puzzle current) || !current.Check())
+			if (!(puzzles.TryPeek(out Puzzle current) && current.Check()))
 				return;
 			puzzles.Dequeue();
 		}
