@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace Core.Puzzles
@@ -6,9 +7,9 @@ namespace Core.Puzzles
 	public class PuzzleManager : MonoBehaviour
 	{
 		[Header("References:")]
-		[SerializeField] private PuzzleSolutionChecker solutionChecker;
 		[SerializeField] private AudioSource audioSource;
-		[SerializeField] private Animator animator;
+		[SerializeField] private PuzzleSolutionProvider puzzlesProvider;
+		[SerializeField] private List<GameObject> stoneDoorPrefabs;
 
 		[Header("Config:")]
 		public AudioClip correctSolutionClip;
@@ -17,15 +18,19 @@ namespace Core.Puzzles
 
 		public void TestSolution()
 		{
-			bool puzzleSolved = solutionChecker.Check();
+			bool puzzleSolved = puzzlesProvider.currentPuzzle.Check();
 			handleSolutionProvided
 				(
 					audioClip: puzzleSolved ? correctSolutionClip : incorrectSolutionClip
 				);
 			if (puzzleSolved)
 			{
-				animator.SetTrigger("Open");
-				animator.GetComponent<Collider>().isTrigger = true;
+				if (stoneDoorPrefabs.Count > 0)
+				{
+					stoneDoorPrefabs[0].GetComponent<Animator>().SetTrigger("Open");
+					stoneDoorPrefabs.RemoveAt(0);
+				}
+				puzzlesProvider.MoveToNext();
 			}
 		}
 
@@ -34,7 +39,6 @@ namespace Core.Puzzles
 		{
 			audioSource.clip = audioClip;
 			audioSource.Play();
-
 		}
 	}
 }
