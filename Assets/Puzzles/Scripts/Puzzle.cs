@@ -9,7 +9,7 @@ namespace Core.Puzzles
 		[SerializeField] private PuzzleSolutionChecker solution;
 		[SerializeField] private Doors.Door associatedDoor;
 		[SerializeField] private AudioSource audioSource;
-		[SerializeField] private GameObject[] associatedGameObjects;
+		[SerializeField] private Transform associatedGameObjectsParent;
 
 		[Header("Config:")]
 		public AudioClip success;
@@ -47,8 +47,8 @@ namespace Core.Puzzles
 
 		private void setActivationValueOfAssociateds(bool value)
 		{
-			foreach (var go in associatedGameObjects)
-				go.SetActive(value);
+			for (int i = 0; i < associatedGameObjectsParent.childCount; i++)
+				associatedGameObjectsParent.GetChild(i).gameObject.SetActive(value);
 		}
 	}
 }

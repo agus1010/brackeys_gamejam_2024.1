@@ -10,7 +10,9 @@ namespace Assets.Puzzles
 	{
 		public ToggableInteractable[] masks;
 
+		public int correctMask = 0;
+
 		public override bool Check()
-			=> masks[0].isOn && masks.Where(m => !m.isOn).Count() == 7;
+			=> masks[correctMask].isOn && masks.Where(m => !m.isOn).Count() == 7;
 	}
 }
