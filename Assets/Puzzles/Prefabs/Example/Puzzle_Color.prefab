@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180863020581560271, guid: 80f3a4b5b45febc479590af705e032e0, type: 3}
       propertyPath: m_Name
-      value: Example Puzzle
+      value: Puzzle_Color
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masks: []
+  correctMask: 0
 --- !u!1001 &5688291333341235425
 PrefabInstance:
   m_ObjectHideFlags: 0
