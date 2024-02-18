@@ -7,21 +7,25 @@ namespace Assets.Interactables
 {
 	public class ToggableInteractable : Interactable
 	{
+		[Header("Referennces:")]
+		[SerializeField] private MeshRenderer meshRenderer;
+		
+		[Header("Config:")]
+		public Material onMaterial;
 		[SerializeField] private bool _isOn = false;
+		
 		public bool isOn
 		{
 			get => _isOn;
 			set => _isOn = value;
 		}
-		public Material onMaterial;
 
-
-		private MeshRenderer meshRenderer;
-        Material originalMaterial;
+        private Material originalMaterial;
 
         private void Start()
 		{
-			meshRenderer = GetComponent<MeshRenderer>();
+			if (meshRenderer == null)
+				meshRenderer = GetComponent<MeshRenderer>();
             originalMaterial = meshRenderer.material;
         }
 
