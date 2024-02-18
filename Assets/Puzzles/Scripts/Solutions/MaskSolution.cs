@@ -24,17 +24,6 @@ namespace Assets.Puzzles
                     }
             }
             return masks.Where(m => !m.isOn).Count() == (masks.Length - correctMasks.Length);
-
-
-            /*
-            if ((masks[].isOn)){
-                if (masks.Where(m => !m.isOn).Count() == 5)
-                {
-                    return true;
-                }
-            }
-            return false;
-            */
         }
 		
 	}
