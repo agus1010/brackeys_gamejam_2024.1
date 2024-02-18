@@ -13,23 +13,29 @@ namespace Assets.Interactables
 			get => _isOn;
 			set => _isOn = value;
 		}
-
 		public Material onMaterial;
-		public Material offMaterial;
 
 
 		private MeshRenderer meshRenderer;
+        Material originalMaterial;
 
-
-		private void Start()
+        private void Start()
 		{
 			meshRenderer = GetComponent<MeshRenderer>();
-		}
+            originalMaterial = meshRenderer.material;
+        }
 
 		public override void Interact()
 		{
 			_isOn = !_isOn;
-			meshRenderer.material = _isOn? onMaterial : offMaterial;
+			if (_isOn)
+			{
+				meshRenderer.material = onMaterial;
+            }
+			else
+			{
+				meshRenderer.material = originalMaterial;
+			}
 			base.Interact();
 		}
 	}

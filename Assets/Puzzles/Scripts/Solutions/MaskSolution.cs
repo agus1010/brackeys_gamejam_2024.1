@@ -12,19 +12,18 @@ namespace Assets.Puzzles
 		public ToggableInteractable[] masks;
 
 
-		public int correctMask1 = 0;
-        public int correctMask2 = 0;
-        public int correctMask3 = 0;
+		public int[] correctMasks;
 
         public override bool Check()
 		{
-            if ((masks[correctMask1].isOn) && (masks[correctMask2].isOn) && (masks[correctMask3].isOn)){
-                if (masks.Where(m => !m.isOn).Count() == 5)
-                {
-                    return true;
-                }
+            foreach (var mask in correctMasks)
+            {
+                    if (!masks[mask].isOn)
+                    {
+                    return false;
+                    }
             }
-            return false;
+            return masks.Where(m => !m.isOn).Count() == (masks.Length - correctMasks.Length);
         }
 		
 	}
