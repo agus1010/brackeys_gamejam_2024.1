@@ -5,7 +5,7 @@ using Core.Interactables;
 
 namespace Assets.Interactables
 {
-	public class ToggableInteractable : Interactable
+	public class ToggableInteractable : GameInteractable
 	{
 		[Header("Referennces:")]
 		[SerializeField] private MeshRenderer meshRenderer;
@@ -13,12 +13,16 @@ namespace Assets.Interactables
 		[Header("Config:")]
 		public Material onMaterial;
 		[SerializeField] private bool _isOn = false;
+		[SerializeField] private bool _isPartOfSolution = false;
 		
 		public bool isOn
 		{
 			get => _isOn;
 			set => _isOn = value;
 		}
+
+		public bool isPartOfSolution => _isPartOfSolution;
+
 
         private Material originalMaterial;
 

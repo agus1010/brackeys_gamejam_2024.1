@@ -1,30 +1,32 @@
 ﻿using Core.Puzzles;
-using System.Linq;
 
 using Assets.Interactables;
-
+using UnityEngine;
 
 namespace Assets.Puzzles
 {
 
     public class MaskSolution : PuzzleSolutionChecker
 	{
-		public ToggableInteractable[] masks;
+        public Transform associatedGameObjects;
 
+        private ToggableInteractable[] masks;
 
-		public int[] correctMasks;
 
         public override bool Check()
 		{
-            foreach (var mask in correctMasks)
+            foreach (var toggle in masks)
             {
-                    if (!masks[mask].isOn)
-                    {
+                if ((toggle.isPartOfSolution && !toggle.isOn) || (!toggle.isPartOfSolution && toggle.isOn))
                     return false;
-                    }
             }
-            return masks.Where(m => !m.isOn).Count() == (masks.Length - correctMasks.Length);
+            return true;
         }
-		
+
+
+		private void Start()
+		{
+            masks = associatedGameObjects.GetComponentsInChildren<ToggableInteractable>();
+		}
 	}
 }

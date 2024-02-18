@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 namespace Core.Interactables
 {
-	public class Interactable : MonoBehaviour, IInteractable, IPointerClickHandler
+	public class GameInteractable : MonoBehaviour, IInteractable, IPointerClickHandler
 	{
-		public UnityEvent<Interactable> InteractedWith;
+		public UnityEvent<GameInteractable> InteractedWith;
 
 
 		public virtual void Interact()
